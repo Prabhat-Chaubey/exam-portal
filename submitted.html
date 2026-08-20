@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Submitted — ExamPortal</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body class="result-body">
+  <div class="result-card">
+    <div class="result-icon success-icon">✅</div>
+    <h1>Test Submitted Successfully!</h1>
+    <p id="submittedMsg">Your responses have been recorded.</p>
+    <div class="result-details" id="resultDetails"></div>
+    <p class="result-note">📩 You may close this tab. Your instructor will review your responses.</p>
+  </div>
+  <script>
+    const s = JSON.parse(sessionStorage.getItem('studentData') || '{}');
+    if (s.firstName) {
+      document.getElementById('submittedMsg').textContent =
+        `Thank you, ${s.firstName} ${s.lastName}! Your responses have been recorded.`;
+      document.getElementById('resultDetails').innerHTML = `
+        <p><strong>Roll No:</strong> ${s.rollNumber}</p>
+        <p><strong>Email:</strong> ${s.email}</p>
+        <p><strong>Stream:</strong> ${s.stream}</p>
+      `;
+    }
+    sessionStorage.clear();
+  </script>
+</body>
+</html>

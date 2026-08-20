@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Exam Portal — Register</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body class="auth-body">
+
+  <div class="auth-wrapper">
+
+    <!-- Left Panel -->
+    <div class="auth-panel-left">
+      <div class="brand">
+        <div class="brand-icon">📘</div>
+        <h1 class="brand-name">ExamPortal</h1>
+        <p class="brand-tagline">Secure. Proctored. Trusted.</p>
+      </div>
+      <ul class="feature-list">
+        <li>✅ Fully Proctored Environment</li>
+        <li>✅ Auto-Submit on Violation</li>
+        <li>✅ Real-Time Timer</li>
+        <li>✅ Instant Submission Record</li>
+      </ul>
+    </div>
+
+    <!-- Right Panel — Form -->
+    <div class="auth-panel-right">
+      <div class="form-card">
+        <h2 class="form-title">Student Registration</h2>
+        <p class="form-subtitle">Fill in your details to access the exam</p>
+
+        <form id="registerForm" novalidate>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">First Name</label>
+              <input type="text" id="firstName" placeholder="e.g. Riya" required />
+              <span class="error-msg" id="err-firstName"></span>
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name</label>
+              <input type="text" id="lastName" placeholder="e.g. Sharma" required />
+              <span class="error-msg" id="err-lastName"></span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="e.g. riya@college.edu" required />
+            <span class="error-msg" id="err-email"></span>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="rollNumber">Roll Number</label>
+              <input type="text" id="rollNumber" placeholder="e.g. CS2024001" required />
+              <span class="error-msg" id="err-rollNumber"></span>
+            </div>
+            <div class="form-group">
+              <label for="stream">Stream / Branch</label>
+              <select id="stream" required>
+                <option value="">— Select Stream —</option>
+                <option value="Computer Science">Computer Science</option>
+                <option value="Information Technology">Information Technology</option>
+                <option value="Electronics">Electronics</option>
+                <option value="Mechanical">Mechanical</option>
+                <option value="Civil">Civil</option>
+                <option value="Commerce">Commerce</option>
+                <option value="Science">Science</option>
+                <option value="Arts">Arts</option>
+                <option value="Other">Other</option>
+              </select>
+              <span class="error-msg" id="err-stream"></span>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-primary" id="submitBtn">
+            <span id="btnText">Proceed to Exam →</span>
+            <span id="btnLoader" class="loader hidden"></span>
+          </button>
+
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+  <script src="js/firebase-config.js"></script>
+  <script src="js/register.js"></script>
+</body>
+</html>

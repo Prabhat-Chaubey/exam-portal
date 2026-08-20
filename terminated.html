@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Session Terminated — ExamPortal</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body class="result-body">
+  <div class="result-card danger-card">
+    <div class="result-icon danger-icon">🚫</div>
+    <h1>Exam Terminated</h1>
+    <p>Your exam session has been <strong>terminated</strong> due to a proctoring violation.</p>
+    <p>Switching tabs or exiting full screen during the exam is not permitted.</p>
+    <div class="result-details" id="terminatedDetails"></div>
+    <p class="result-note danger-note">⚠️ This incident has been recorded. Please contact your exam administrator.</p>
+  </div>
+  <script>
+    const s = JSON.parse(sessionStorage.getItem('studentData') || '{}');
+    if (s.firstName) {
+      document.getElementById('terminatedDetails').innerHTML = `
+        <p><strong>Student:</strong> ${s.firstName} ${s.lastName}</p>
+        <p><strong>Roll No:</strong> ${s.rollNumber}</p>
+      `;
+    }
+    sessionStorage.clear();
+  </script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Welcome — Exam Portal</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="css/welcome.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body class="welcome-body">
+
+  <div class="welcome-container">
+
+    <div class="welcome-header">
+      <div class="welcome-icon">🎓</div>
+      <h1 id="welcomeHeading">Welcome, Student!</h1>
+      <p id="welcomeSubtext">You are registered for the upcoming exam.</p>
+    </div>
+
+    <div class="info-grid">
+      <div class="info-card">
+        <span class="info-icon">📝</span>
+        <span class="info-label">Exam Name</span>
+        <span class="info-value">General Aptitude Test — 2024</span>
+      </div>
+      <div class="info-card">
+        <span class="info-icon">❓</span>
+        <span class="info-label">Total Questions</span>
+        <span class="info-value">30 Questions</span>
+      </div>
+      <div class="info-card">
+        <span class="info-icon">⏱️</span>
+        <span class="info-label">Duration</span>
+        <span class="info-value">30 Minutes</span>
+      </div>
+      <div class="info-card">
+        <span class="info-icon">🔒</span>
+        <span class="info-label">Mode</span>
+        <span class="info-value">Proctored (Full Screen)</span>
+      </div>
+    </div>
+
+    <div class="instructions-card">
+      <h3>📋 Instructions — Please Read Carefully</h3>
+      <ul>
+        <li>The exam will open in <strong>Full Screen mode</strong>. Do not exit full screen.</li>
+        <li><strong>Switching tabs or windows</strong> will immediately <strong>terminate your exam</strong>.</li>
+        <li>Each MCQ has only <strong>one correct answer</strong>.</li>
+        <li>Short answer questions require <strong>brief written responses</strong>.</li>
+        <li>The timer starts as soon as you click <strong>"Start Test"</strong>.</li>
+        <li>You can navigate between questions using the <strong>Question Palette</strong>.</li>
+        <li>Click <strong>"Submit Test"</strong> once you have answered all questions.</li>
+        <li>The test will <strong>auto-submit</strong> when the timer expires.</li>
+        <li><strong>Right-click</strong> and <strong>keyboard shortcuts</strong> are disabled during the exam.</li>
+      </ul>
+    </div>
+
+    <div class="student-info-bar" id="studentInfoBar">
+      <!-- Filled by JS -->
+    </div>
+
+    <div class="agreement-row">
+      <input type="checkbox" id="agreeCheck"/>
+      <label for="agreeCheck">I have read all instructions and agree to the exam terms.</label>
+    </div>
+
+    <button class="btn-start" id="startTestBtn" disabled>
+      🚀 Start Test
+    </button>
+
+  </div>
+
+  <script src="js/welcome.js"></script>
+</body>
+</html>
